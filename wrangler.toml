@@ -1,0 +1,23 @@
+name = "my-extremeheatwatch"
+main = "worker/index.js"
+compatibility_date = "2026-05-07"
+workers_dev = true
+routes = [
+  { pattern = "extremeheatwatch.site/*", zone_name = "extremeheatwatch.site" },
+  { pattern = "www.extremeheatwatch.site/*", zone_name = "extremeheatwatch.site" }
+]
+
+[vars]
+APP_ORIGIN = "https://extremeheatwatch.site"
+CREEM_API_BASE = "https://api.creem.io"
+CREEM_ENV = "live"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+run_worker_first = [
+  "/api/*",
+  "/sitemap.xml",
+  "/robots.txt"
+]
