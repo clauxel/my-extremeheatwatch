@@ -328,21 +328,23 @@ export function handleRobots() {
 }
 
 async function fetchAsset(request, env) {
-  if (env?.ASSETS?.fetch) {
+  const assetBinding = env?.SITE_ASSETS || env?.ASSETS
+
+  if (assetBinding?.fetch) {
     const requestUrl = new URL(request.url)
     const normalizedPath = requestUrl.pathname.replace(/\/+$/, '') || '/'
 
     if (staticAssetPaths.has(normalizedPath)) {
       const assetUrl = new URL(request.url)
       assetUrl.pathname = normalizedPath === '/' ? '/index.html' : `${normalizedPath}/index.html`
-      const assetResponse = await env.ASSETS.fetch(new Request(assetUrl.toString(), request))
+      const assetResponse = await assetBinding.fetch(new Request(assetUrl.toString(), request))
       if (assetResponse.status !== 404) return assetResponse
     }
 
-    return env.ASSETS.fetch(request)
+    return assetBinding.fetch(request)
   }
 
-  return new Response('Cloudflare ASSETS binding is unavailable.', {
+  return new Response('Cloudflare asset binding is unavailable.', {
     status: 500,
     headers: securityHeaders(),
   })

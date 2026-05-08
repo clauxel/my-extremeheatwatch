@@ -9,7 +9,7 @@
     "preview": "vite preview --host 127.0.0.1",
     "test": "node --test test/*.test.mjs && npm run build",
     "cloudflare:deploy": "npm run build && npx wrangler deploy --keep-vars",
-    "pages:deploy": "npm run build && npx wrangler pages deploy dist --project-name my-extremeheatwatch --branch main"
+    "pages:deploy": "npm run build && npx wrangler pages deploy dist --project-name my-extremeheatwatch --branch main --commit-dirty=true"
   },
   "dependencies": {
     "react": "^19.2.0",

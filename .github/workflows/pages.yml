@@ -21,4 +21,4 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      - run: npx wrangler pages deploy dist --project-name my-extremeheatwatch --branch main
+      - run: npx wrangler pages deploy dist --project-name my-extremeheatwatch --branch main --commit-dirty=true
