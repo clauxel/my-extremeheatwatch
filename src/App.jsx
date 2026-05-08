@@ -704,19 +704,55 @@ export default function App() {
           <p className="ehw-eyebrow">Privacy</p>
           <h1>Privacy Policy</h1>
           <p className="ehw-lede">
-            Extreme Heat Watch keeps planning data focused on operations and uses first-party events to understand whether the
-            product is working.
+            Extreme Heat Watch keeps planning data focused on operations, uses limited first-party measurement, and avoids collecting
+            sensitive personal details that are not needed for heat-day scheduling.
           </p>
           <section>
-            <h2>Operations data</h2>
+            <h2>Last updated</h2>
+            <p>May 8, 2026.</p>
+            <h2>Information we collect</h2>
             <p>
-              Paid workspaces may use locations, roles, schedules, and contact categories so teams can plan heat-day operations.
-              Do not submit private medical details or secrets.
+              We may collect account contact details, billing metadata, workspace settings, locations you choose to monitor, roles,
+              schedules, notification categories, support messages, and basic device or usage data needed to operate the service.
+            </p>
+            <p>
+              Do not submit private medical information, student education records, child personal information, Social Security
+              numbers, passwords, credentials, or regulated health data unless a separate written agreement expressly allows it.
             </p>
             <h2>Payments</h2>
-            <p>Payments are handled through Creem hosted checkout. We receive payment metadata needed for fulfillment and support.</p>
+            <p>
+              Payments are handled through Creem hosted checkout. We do not store full payment card numbers. We receive payment
+              metadata needed to confirm purchases, provide support, handle renewals, and maintain business records.
+            </p>
             <h2>Measurement</h2>
-            <p>We send simple first-party events such as page views, pricing intent, and checkout starts. We do not use third-party tracking cookies.</p>
+            <p>
+              We send simple first-party events such as page views, pricing intent, and checkout starts. We do not use third-party
+              advertising cookies on this site.
+            </p>
+            <h2>How we use information</h2>
+            <p>
+              We use information to provide the service, process payments, secure the site, troubleshoot issues, improve product
+              flows, respond to support requests, enforce our Terms, and comply with legal obligations.
+            </p>
+            <h2>Sharing</h2>
+            <p>
+              We may share information with hosting, payment, analytics, security, and support providers that help us operate the
+              service; with professional advisors; during a business transaction; or when required to protect rights, safety, or
+              comply with law. We do not sell personal information for money or share it for cross-context behavioral advertising.
+            </p>
+            <h2>Retention and security</h2>
+            <p>
+              We keep information only as long as reasonably needed for the purposes above, unless a longer period is required for
+              legal, tax, accounting, security, or dispute purposes. We use reasonable technical and organizational safeguards, but no
+              internet service can promise perfect security.
+            </p>
+            <h2>Your choices</h2>
+            <p>
+              You may request access, correction, deletion, or other privacy rights that apply in your jurisdiction by contacting
+              support@aigeamy.com. We may verify your request and may retain information where permitted or required by law.
+            </p>
+            <h2>Contact</h2>
+            <p>Privacy questions and requests should be sent to support@aigeamy.com.</p>
           </section>
         </article>
       </main>
@@ -734,15 +770,76 @@ export default function App() {
             safety and compliance decisions.
           </p>
           <section>
+            <h2>Last updated</h2>
+            <p>May 8, 2026.</p>
+            <h2>Agreement and authority</h2>
+            <p>
+              These Terms are a binding agreement between the customer using Extreme Heat Watch and the operator of the service. If
+              you use the service for an organization, you represent that you have authority to bind that organization.
+            </p>
             <h2>Service scope</h2>
             <p>
               Plans cover heat-day schedule planning, notification workflows, rule reminders, and operational checklists. The
               service is planning support and does not provide legal, medical, or emergency services.
             </p>
+            <h2>Customer responsibility</h2>
+            <p>
+              You are responsible for your worksites, events, schools, policies, staff instructions, emergency response, regulatory
+              compliance, and final decisions. You must review all outputs before use and confirm them against official alerts,
+              applicable law, contracts, collective bargaining obligations, insurance requirements, and your own safety procedures.
+            </p>
             <h2>Official guidance</h2>
-            <p>National Weather Service alerts, OSHA resources, state-plan rules, and local emergency instructions should control final decisions.</p>
+            <p>
+              National Weather Service alerts, OSHA resources, state-plan rules, and local emergency instructions should control
+              final decisions. Extreme Heat Watch is not a weather authority, law firm, medical provider, emergency dispatcher,
+              insurer, or compliance auditor.
+            </p>
+            <h2>No prohibited data</h2>
+            <p>
+              Do not upload regulated health data, private medical details, student education records, child personal information,
+              passwords, credentials, government identifiers, or other sensitive data unless we have signed a separate written
+              agreement specifically allowing that use.
+            </p>
             <h2>Payments</h2>
-            <p>Plan payment happens in a Creem hosted checkout popup and returns to the homepage after completion.</p>
+            <p>
+              Plan payment happens in a Creem hosted checkout popup and returns to the homepage after completion. Fees are due as
+              shown at checkout and are non-refundable except where required by law or expressly stated in a signed order.
+            </p>
+            <h2>No warranties</h2>
+            <p>
+              The service is provided as is and as available. To the maximum extent permitted by law, we disclaim all warranties,
+              including implied warranties of merchantability, fitness for a particular purpose, non-infringement, uninterrupted
+              availability, accuracy, and any guarantee that use of the service will prevent injury, loss, citation, penalty,
+              regulatory action, claim, or incident.
+            </p>
+            <h2>Limitation of liability</h2>
+            <p>
+              To the maximum extent permitted by law, we will not be liable for indirect, incidental, special, consequential,
+              exemplary, punitive, lost-profit, lost-revenue, lost-data, business interruption, personal injury, property damage,
+              regulatory penalty, or third-party claims arising from use of the service. Our total liability for any claim is limited
+              to the greater of one hundred dollars or the amount you paid for the service during the three months before the event
+              giving rise to the claim.
+            </p>
+            <h2>Indemnity</h2>
+            <p>
+              You will defend, indemnify, and hold us harmless from claims, damages, losses, liabilities, penalties, costs, and
+              expenses arising from your operations, schedules, notices, decisions, data, legal compliance, misuse of the service, or
+              breach of these Terms.
+            </p>
+            <h2>Disputes</h2>
+            <p>
+              These Terms are governed by Delaware law, excluding conflict-of-law rules. Any dispute must be resolved individually
+              through binding arbitration under the AAA Commercial Arbitration Rules, except that either party may seek injunctive
+              relief or use small claims court where available. Class actions, class arbitration, representative actions, and jury
+              trials are waived to the maximum extent permitted by law.
+            </p>
+            <h2>Changes and termination</h2>
+            <p>
+              We may update the service or these Terms, suspend access, or terminate accounts that create risk, violate these Terms,
+              abuse checkout or support, or use the service in a way that could harm people, systems, or legal compliance.
+            </p>
+            <h2>Contact</h2>
+            <p>Questions about these Terms should be sent to support@aigeamy.com.</p>
           </section>
         </article>
       </main>
@@ -834,6 +931,7 @@ export default function App() {
           <a href="/excessive-heat-warning-what-to-do" onClick={headerLink('/excessive-heat-warning-what-to-do')}>
             Warning actions
           </a>
+          <a href="mailto:support@aigeamy.com">support@aigeamy.com</a>
         </nav>
       </footer>
     </div>

@@ -20,6 +20,116 @@ const homeDescription =
 
 const sourceIndex = await fs.readFile(sourceIndexPath, 'utf8')
 
+const privacySections = [
+  ['Last updated', ['May 8, 2026.']],
+  [
+    'Information we collect',
+    [
+      'We may collect account contact details, billing metadata, workspace settings, locations you choose to monitor, roles, schedules, notification categories, support messages, and basic device or usage data needed to operate the service.',
+      'Do not submit private medical information, student education records, child personal information, Social Security numbers, passwords, credentials, or regulated health data unless a separate written agreement expressly allows it.',
+    ],
+  ],
+  [
+    'Payments',
+    [
+      'Payments are handled through Creem hosted checkout. We do not store full payment card numbers. We receive payment metadata needed to confirm purchases, provide support, handle renewals, and maintain business records.',
+    ],
+  ],
+  [
+    'Measurement',
+    ['We send simple first-party events such as page views, pricing intent, and checkout starts. We do not use third-party advertising cookies on this site.'],
+  ],
+  [
+    'How we use information',
+    [
+      'We use information to provide the service, process payments, secure the site, troubleshoot issues, improve product flows, respond to support requests, enforce our Terms, and comply with legal obligations.',
+    ],
+  ],
+  [
+    'Sharing',
+    [
+      'We may share information with hosting, payment, analytics, security, and support providers that help us operate the service; with professional advisors; during a business transaction; or when required to protect rights, safety, or comply with law. We do not sell personal information for money or share it for cross-context behavioral advertising.',
+    ],
+  ],
+  [
+    'Retention and security',
+    [
+      'We keep information only as long as reasonably needed, unless a longer period is required for legal, tax, accounting, security, or dispute purposes. We use reasonable safeguards, but no internet service can promise perfect security.',
+    ],
+  ],
+  ['Your choices', ['You may request access, correction, deletion, or other privacy rights that apply in your jurisdiction by contacting support@aigeamy.com.']],
+  ['Contact', ['Privacy questions and requests should be sent to support@aigeamy.com.']],
+]
+
+const termsSections = [
+  ['Last updated', ['May 8, 2026.']],
+  [
+    'Agreement and authority',
+    [
+      'These Terms are a binding agreement between the customer using Extreme Heat Watch and the operator of the service. If you use the service for an organization, you represent that you have authority to bind that organization.',
+    ],
+  ],
+  [
+    'Service scope',
+    ['Plans cover heat-day schedule planning, notification workflows, rule reminders, and operational checklists. The service is planning support and does not provide legal, medical, or emergency services.'],
+  ],
+  [
+    'Customer responsibility',
+    [
+      'You are responsible for your worksites, events, schools, policies, staff instructions, emergency response, regulatory compliance, and final decisions. You must review all outputs before use and confirm them against official alerts, applicable law, contracts, collective bargaining obligations, insurance requirements, and your own safety procedures.',
+    ],
+  ],
+  [
+    'Official guidance',
+    [
+      'National Weather Service alerts, OSHA resources, state-plan rules, and local emergency instructions should control final decisions. Extreme Heat Watch is not a weather authority, law firm, medical provider, emergency dispatcher, insurer, or compliance auditor.',
+    ],
+  ],
+  [
+    'No prohibited data',
+    [
+      'Do not upload regulated health data, private medical details, student education records, child personal information, passwords, credentials, government identifiers, or other sensitive data unless we have signed a separate written agreement specifically allowing that use.',
+    ],
+  ],
+  [
+    'Payments',
+    [
+      'Plan payment happens in a Creem hosted checkout popup and returns to the homepage after completion. Fees are due as shown at checkout and are non-refundable except where required by law or expressly stated in a signed order.',
+    ],
+  ],
+  [
+    'No warranties',
+    [
+      'The service is provided as is and as available. To the maximum extent permitted by law, we disclaim all warranties, including implied warranties of merchantability, fitness for a particular purpose, non-infringement, uninterrupted availability, accuracy, and any guarantee that use of the service will prevent injury, loss, citation, penalty, regulatory action, claim, or incident.',
+    ],
+  ],
+  [
+    'Limitation of liability',
+    [
+      'To the maximum extent permitted by law, we will not be liable for indirect, incidental, special, consequential, exemplary, punitive, lost-profit, lost-revenue, lost-data, business interruption, personal injury, property damage, regulatory penalty, or third-party claims arising from use of the service. Our total liability for any claim is limited to the greater of one hundred dollars or the amount you paid for the service during the three months before the event giving rise to the claim.',
+    ],
+  ],
+  [
+    'Indemnity',
+    [
+      'You will defend, indemnify, and hold us harmless from claims, damages, losses, liabilities, penalties, costs, and expenses arising from your operations, schedules, notices, decisions, data, legal compliance, misuse of the service, or breach of these Terms.',
+    ],
+  ],
+  [
+    'Disputes',
+    [
+      'These Terms are governed by Delaware law, excluding conflict-of-law rules. Any dispute must be resolved individually through binding arbitration under the AAA Commercial Arbitration Rules, except that either party may seek injunctive relief or use small claims court where available. Class actions, class arbitration, representative actions, and jury trials are waived to the maximum extent permitted by law.',
+    ],
+  ],
+  [
+    'Changes and termination',
+    [
+      'We may update the service or these Terms, suspend access, or terminate accounts that create risk, violate these Terms, abuse checkout or support, or use the service in a way that could harm people, systems, or legal compliance.',
+    ],
+  ],
+  ['Contact', ['Questions about these Terms should be sent to support@aigeamy.com.']],
+]
+
 await writeStaticPage('/', {
   title: homeTitle,
   description: homeDescription,
@@ -99,7 +209,8 @@ await writeStaticPage('/privacy', {
   canonicalPath: '/privacy',
   rootHtml: buildLegalPrerender(
     'Privacy Policy',
-    'Extreme Heat Watch keeps planning data focused on operations and uses simple first-party events to understand product reliability.',
+    'Extreme Heat Watch keeps planning data focused on operations, uses limited first-party measurement, and avoids collecting sensitive personal details that are not needed for heat-day scheduling.',
+    privacySections,
   ),
   structuredData: [],
 })
@@ -111,7 +222,8 @@ await writeStaticPage('/terms', {
   canonicalPath: '/terms',
   rootHtml: buildLegalPrerender(
     'Terms of Service',
-    'Plans cover heat-day schedule planning, notification workflows, rule reminders, and operational checklists.',
+    'By using Extreme Heat Watch, you agree to use official alerts, your own policies, and qualified advisors for final safety and compliance decisions.',
+    termsSections,
   ),
   structuredData: [],
 })
@@ -121,7 +233,7 @@ await writeStaticPage('/checkout/done', {
   description: 'Your Extreme Heat Watch checkout is finishing.',
   robots: 'noindex,nofollow',
   canonicalPath: '/checkout/done',
-  rootHtml: buildLegalPrerender('Returning to Extreme Heat Watch...', 'Your payment is complete and the homepage is reopening.'),
+  rootHtml: buildLegalPrerender('Returning to Extreme Heat Watch...', 'Your payment is complete and the homepage is reopening.', []),
   structuredData: [],
 })
 
@@ -207,7 +319,8 @@ function buildHomePrerender() {
           <h2>Turn a heat alert into a staffing plan before the day gets away from you.</h2>
         </section>
       </section>
-    </main>`
+    </main>
+    ${buildFooterPrerender()}`
 }
 
 function buildGuidePrerender(page) {
@@ -247,18 +360,47 @@ function buildGuidePrerender(page) {
           <a class="ehw-button ehw-button-heat" href="/#pricing">See recommended plan</a>
         </aside>
       </article>
-    </main>`
+    </main>
+    ${buildFooterPrerender()}`
 }
 
-function buildLegalPrerender(title, description) {
+function buildLegalPrerender(title, description, sections) {
+  const sectionHtml = sections
+    .map(
+      ([heading, paragraphs]) => `
+        <section>
+          <h2>${escapeHtml(heading)}</h2>
+          ${paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('\n')}
+        </section>`,
+    )
+    .join('\n')
+
   return `
     <main class="ehw-main">
       <article class="ehw-article">
         <a class="ehw-back-link" href="/">Back to Extreme Heat Watch</a>
         <h1>${escapeHtml(title)}</h1>
         <p class="ehw-lede">${escapeHtml(description)}</p>
+        ${sectionHtml}
       </article>
-    </main>`
+    </main>
+    ${buildFooterPrerender()}`
+}
+
+function buildFooterPrerender() {
+  return `
+    <footer class="ehw-footer">
+      <div>
+        <strong>Extreme Heat Watch</strong>
+        <span>Heat compliance scheduling, risk notices, and rule reminders for teams that operate in public heat.</span>
+      </div>
+      <nav aria-label="Footer">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/excessive-heat-warning-what-to-do">Warning actions</a>
+        <a href="mailto:support@aigeamy.com">support@aigeamy.com</a>
+      </nav>
+    </footer>`
 }
 
 function escapeHtml(value) {
