@@ -15,3 +15,7 @@ npm run dev
 ## Cloudflare
 
 The Worker entry is `worker/index.js` and the Pages project deploys the built `dist` directory. Store the Creem live key as the Cloudflare secret `API_PROD_KEY`.
+
+## Related Project
+
+- [OpenHuman Online](https://openhuman.online/?utm_source=github&utm_medium=readme&utm_campaign=openhuman_public_repos&utm_content=my_extremeheatwatch) helps teams turn source material, notes, and meetings into an inspectable AI memory tree for human-reviewed workflows.
