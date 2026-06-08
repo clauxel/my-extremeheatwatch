@@ -14,9 +14,9 @@ const siteName = 'Extreme Heat Watch'
 const googleVerification = (process.env.GOOGLE_SITE_VERIFICATION || '').trim()
 const bingVerification = (process.env.BING_SITE_VERIFICATION || process.env.BING_WEBMASTER_VERIFICATION || '').trim()
 
-const homeTitle = 'Extreme Heat Watch | Heat Compliance Scheduling'
+const homeTitle = 'Extreme Heat Watch - Heat Compliance Scheduling and Risk Alerts'
 const homeDescription =
-  'Heat compliance scheduling, risk notifications, and OSHA/state rule reminders for enterprises, schools, and live events.'
+  'Plan heat compliance scheduling, risk notifications, OSHA and state rule reminders, staffing alerts, and event readiness for field teams and venues.'
 
 const sourceIndex = await fs.readFile(sourceIndexPath, 'utf8')
 

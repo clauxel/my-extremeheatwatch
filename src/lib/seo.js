@@ -5,9 +5,9 @@ const siteName = 'Extreme Heat Watch'
 
 const routeSeo = {
   '/': {
-    title: 'Extreme Heat Watch | Heat Compliance Scheduling',
+    title: 'Extreme Heat Watch - Heat Compliance Scheduling and Risk Alerts',
     description:
-      'Heat compliance scheduling, risk notifications, and OSHA/state rule reminders for enterprises, schools, and live events.',
+      'Plan heat compliance scheduling, risk notifications, OSHA and state rule reminders, staffing alerts, and event readiness for field teams and venues.',
   },
   '/privacy': {
     title: `Privacy | ${siteName}`,
