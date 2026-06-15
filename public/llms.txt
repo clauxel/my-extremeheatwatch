@@ -1,0 +1,21 @@
+# Extreme Heat Watch
+
+Plan heat compliance scheduling, risk notifications, OSHA and state rule reminders, staffing alerts, and event readiness for field teams and venues.
+
+Website: https://extremeheatwatch.site/
+Pricing: https://extremeheatwatch.site/pricing/
+Checkout: https://extremeheatwatch.site/checkout/
+Support: support@aigeamy.com
+Type: Hosted SaaS workflow product
+
+Problem:
+- Teams need a quotable product definition, pricing path, evidence trail, and checkout route.
+
+Solution:
+- Extreme Heat Watch provides a hosted workflow with public pricing, structured evidence, support contact, and report or receipt outputs.
+
+Useful pages:
+- Home: https://extremeheatwatch.site/
+- Pricing: https://extremeheatwatch.site/pricing/
+- Resources: https://extremeheatwatch.site/resources/
+- Sitemap: https://extremeheatwatch.site/sitemap.xml

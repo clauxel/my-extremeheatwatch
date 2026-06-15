@@ -15,4 +15,3 @@ npm run dev
 ## Cloudflare
 
 The Worker entry is `worker/index.js` and the Pages project deploys the built `dist` directory. Store the Creem live key as the Cloudflare secret `API_PROD_KEY`.
-
