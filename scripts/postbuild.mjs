@@ -32,7 +32,7 @@ const privacySections = [
   [
     'Payments',
     [
-      'Payments are handled through Creem hosted checkout. We do not store full payment card numbers. We receive payment metadata needed to confirm purchases, provide support, handle renewals, and maintain business records.',
+      'Payments are handled through Polar hosted checkout. We do not store full payment card numbers. We receive payment metadata needed to confirm purchases, provide support, handle renewals, and maintain business records.',
     ],
   ],
   [
@@ -94,7 +94,7 @@ const termsSections = [
   [
     'Payments',
     [
-      'Plan payment happens in a Creem hosted checkout popup and returns to the homepage after completion. Fees are due as shown at checkout and are non-refundable except where required by law or expressly stated in a signed order.',
+      'Plan payment happens in a Polar hosted checkout popup and returns to the homepage after completion. Fees are due as shown at checkout and are non-refundable except where required by law or expressly stated in a signed order.',
     ],
   ],
   [

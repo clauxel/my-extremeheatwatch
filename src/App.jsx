@@ -133,7 +133,7 @@ function openCenteredCheckoutWindow() {
   const top = Math.max(0, Math.round(window.screenY + (window.outerHeight - height) / 2))
   const popup = window.open(
     'about:blank',
-    'extreme-heat-watch-creem-checkout',
+    'extreme-heat-watch-polar-checkout',
     `popup=yes,width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`,
   )
 
@@ -141,7 +141,7 @@ function openCenteredCheckoutWindow() {
     try {
       popup.document.title = 'Opening secure checkout'
       popup.document.body.innerHTML =
-        '<main style="min-height:100vh;display:grid;place-items:center;background:#081816;color:#f5fff4;font-family:Arial,sans-serif;text-align:center;padding:28px"><section><h1 style="font-size:22px;margin:0 0 8px">Opening secure checkout...</h1><p style="margin:0;color:#c8e9df">Your Creem payment window is being prepared.</p></section></main>'
+        '<main style="min-height:100vh;display:grid;place-items:center;background:#081816;color:#f5fff4;font-family:Arial,sans-serif;text-align:center;padding:28px"><section><h1 style="font-size:22px;margin:0 0 8px">Opening secure checkout...</h1><p style="margin:0;color:#c8e9df">Your Polar payment window is being prepared.</p></section></main>'
     } catch {
       /* A named popup may already be cross-origin; assigning location still works. */
     }
@@ -271,7 +271,7 @@ export default function App() {
     return () => window.removeEventListener('message', onMessage)
   }, [publicOrigin, route])
 
-  async function startCheckout(planId = 'pro', cycle = billing, loadingKey = `checkout-${planId}-${cycle}`, provider = 'creem') {
+  async function startCheckout(planId = 'pro', cycle = billing, loadingKey = `checkout-${planId}-${cycle}`, provider = 'polar') {
     setSelectedPlan(planId)
     setBilling(cycle)
     setCheckoutLoadingKey(loadingKey)
@@ -281,7 +281,7 @@ export default function App() {
     const popup = openCenteredCheckoutWindow()
 
     try {
-      const response = await fetch(provider === 'nowpayments' ? '/api/nowpayments-checkout' : '/api/checkout', {
+      const response = await fetch(provider === 'polar' ? '/api/polar-checkout' : '/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ planId, billing: cycle }),
@@ -491,7 +491,7 @@ export default function App() {
             <div className="ehw-trust-row">
               <span>Pro selected by default</span>
               <span>Annual saves 50%</span>
-              <span>Creem checkout opens in place</span>
+              <span>Polar checkout opens in place</span>
             </div>
           </div>
 
@@ -638,7 +638,7 @@ export default function App() {
                   type="button"
                   onMouseEnter={() => setSelectedPlan(plan.id)}
                   onFocus={() => setSelectedPlan(plan.id)}
-                  onClick={() => startCheckout(plan.id, billing, `${loadingKey}-wallet`, 'nowpayments')}
+                  onClick={() => startCheckout(plan.id, billing, `${loadingKey}-wallet`, 'polar')}
                   disabled={Boolean(checkoutLoadingKey)}
                 >
                   {checkoutLoadingKey === `${loadingKey}-wallet` ? 'Opening USDC wallet...' : 'Pay with USDC Wallet'}
@@ -731,7 +731,7 @@ export default function App() {
             </p>
             <h2>Payments</h2>
             <p>
-              Payments are handled through Creem hosted checkout. We do not store full payment card numbers. We receive payment
+              Payments are handled through Polar hosted checkout. We do not store full payment card numbers. We receive payment
               metadata needed to confirm purchases, provide support, handle renewals, and maintain business records.
             </p>
             <h2>Measurement</h2>
@@ -812,7 +812,7 @@ export default function App() {
             </p>
             <h2>Payments</h2>
             <p>
-              Plan payment happens in a Creem hosted checkout popup and returns to the homepage after completion. Fees are due as
+              Plan payment happens in a Polar hosted checkout popup and returns to the homepage after completion. Fees are due as
               shown at checkout and are non-refundable except where required by law or expressly stated in a signed order.
             </p>
             <h2>No warranties</h2>
@@ -867,14 +867,14 @@ export default function App() {
           {checkout.status === 'loading' ? (
             <>
               <p className="ehw-eyebrow">Secure checkout</p>
-              <h2 id="checkout-title">Opening Creem...</h2>
+              <h2 id="checkout-title">Opening Polar...</h2>
               <p>The payment window is being prepared. Keep this page open.</p>
               <div className="ehw-loader" aria-hidden="true" />
             </>
           ) : checkout.status === 'popup' ? (
             <>
               <p className="ehw-eyebrow">Secure checkout</p>
-              <h2 id="checkout-title">Creem checkout is open.</h2>
+              <h2 id="checkout-title">Polar checkout is open.</h2>
               <p>Finish payment in the centered popup. This page stays in place and returns home after success.</p>
               <a className="ehw-button ehw-button-dark" href={checkout.checkoutUrl} target="_blank" rel="noreferrer">
                 Reopen payment window
@@ -890,7 +890,7 @@ export default function App() {
                 type="button"
                 onClick={() => startCheckout(checkout.planId, checkout.billing, checkout.loadingKey)}
               >
-                Try Creem checkout again
+                Try Polar checkout again
               </button>
             </>
           )}

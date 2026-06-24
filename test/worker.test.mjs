@@ -15,7 +15,7 @@ test('runtime returns Cloudflare deployment metadata', async () => {
   const payload = await response.json()
   assert.equal(payload.ok, true)
   assert.equal(payload.publicAppOrigin, 'https://www.extremeheatwatch.site')
-  assert.equal(payload.paymentProvider, 'creem')
+  assert.equal(payload.paymentProvider, 'polar')
 })
 
 test('sitemap and robots include indexable heat alert pages', () => {
@@ -58,7 +58,7 @@ test('checkout validates method and payment secret', async () => {
   assert.equal(noSecretResponse.status, 503)
 })
 
-test('checkout creates Creem product and hosted checkout URL', async () => {
+test('checkout creates Polar product and hosted checkout URL', async () => {
   const originalFetch = globalThis.fetch
   const calls = []
   globalThis.fetch = async (url, options) => {
@@ -67,7 +67,7 @@ test('checkout creates Creem product and hosted checkout URL', async () => {
       return Response.json({ id: 'prod_extreme_heat_watch_test' })
     }
     if (String(url).endsWith('/v1/checkouts')) {
-      return Response.json({ checkout_url: 'https://www.creem.io/checkout/test' })
+      return Response.json({ checkout_url: 'https://www.polar.sh/checkout/test' })
     }
     return Response.json({ message: 'unexpected' }, { status: 500 })
   }
@@ -79,14 +79,14 @@ test('checkout creates Creem product and hosted checkout URL', async () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ planId: 'pro', billing: 'annual' }),
       }),
-      { API_PROD_KEY: 'creem_test_key' },
+      { API_PROD_KEY: 'polar_test_key' },
       new URL('https://www.extremeheatwatch.site/api/checkout'),
     )
     const payload = await response.json()
 
     assert.equal(response.status, 200)
     assert.equal(payload.ok, true)
-    assert.equal(payload.checkoutUrl, 'https://www.creem.io/checkout/test')
+    assert.equal(payload.checkoutUrl, 'https://www.polar.sh/checkout/test')
     assert.equal(calls[0].body.name, 'Extreme Heat Watch Operations Watch (annual)')
     assert.equal(calls[0].body.price, 179400)
     assert.equal(calls[0].body.currency, 'USD')
